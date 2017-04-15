@@ -8,7 +8,8 @@ class App extends Component{
         super(props);
 
         this.state = {
-            query: ''
+            query: '',
+            artist : null
         }
     }
 
@@ -21,8 +22,8 @@ class App extends Component{
         })
         .then(response => response.json())
         .then(json => {
-            const artists = json.artists.items[0]
-            console.log(artists)
+            const artist = json.artists.items[0]
+            this.setState({artist}) //es6 short hand
         })
     }
 
