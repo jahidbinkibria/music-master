@@ -17,7 +17,6 @@ class App extends Component{
     }
 
     search(){
-        console.log(this.state);
         const BASE_URL = 'https://api.spotify.com/v1/search?';
         let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
         const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
@@ -36,7 +35,6 @@ class App extends Component{
         })
         .then(response => response.json())
         .then(json => {
-            console.log('artist top tracks', json);
             const { tracks } = json;//es6 short hand
             this.setState({tracks})//es6 short hand
             })
