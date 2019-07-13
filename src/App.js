@@ -26,9 +26,10 @@ class App extends Component{
         })
         .then(response => response.json())
         .then(json => {
+              console.log(json) 
             const artist = json.artists.items[0]
             this.setState({artist}) //es6 short hand
-
+         
         FETCH_URL = `${ALBUM_URL}${artist.id}/top-tracks?country=US&`;
         fetch(FETCH_URL,{
             method: 'GET'
@@ -42,7 +43,6 @@ class App extends Component{
 
        
     }
-
 
     render(){
         return(
